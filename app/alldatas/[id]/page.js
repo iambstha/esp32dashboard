@@ -1,7 +1,9 @@
 'use client'
 import React from 'react'
 import FetchSensorDataById from '@/utils/FetchSensorDataById'
+import Link from 'next/link'
 const page = ({ params }) => {
+  const list = ['HC-SR04', 'MQ-135', 'DS18B20']
   const url = decodeURIComponent(params.id)
   console.log(url)
 
@@ -11,6 +13,12 @@ const page = ({ params }) => {
   console.log(isLoadingStatus)
   return (
     <div className='  flex flex-col p-4 justify-start items-start border w-full h-full'>
+            <h2 className=' text-base font-semibold '>All Nodes</h2>
+      <ul className=' flex gap-2 '>
+        {
+          list?.map(i => <li key={i} className=' border px-2 py-1 text-sm hover:bg-slate-400 hover:text-slate-50 rounded-lg '><Link href={`/alldatas/${i}`}>{i}</Link></li>)
+        }
+      </ul>
       <h2 className=' text-lg font-semibold '>All Datas</h2>
       <table className=' w-full border border-slate-100 m-2'>
         <thead>

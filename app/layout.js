@@ -20,14 +20,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={font.className}>
-        <div className=' p-4 flex justify-center items-center h-[50px] fixed top-0 left-0 bg-white z-20 w-full'>
+        <div className=' p-4 flex justify-center items-center h-[50px] fixed top-0 left-0 bg-red-100 z-20 w-full'>
           <Navbar />
         </div>
         <div className='flex flex-row justify-center items-center w-full'>
-          <div className=' w-1/6 flex justify-start items-start h-[100%] fixed top-0 left-0 z-20 '>
+          <div className=' w-1/6 flex justify-start items-start fixed top-[50px] left-0 z-20 '>
             <Sidebar />
           </div>
-          <div className=' w-5/6 flex justify-start items-start min-h-full ml-[16%] p-3 bg-slate-50 mt-[50px]'>
+          <div className=' w-5/6 flex justify-start items-start min-h-full ml-[16%] p-3 mt-[50px]'>
             {children}
           </div>
         </div>

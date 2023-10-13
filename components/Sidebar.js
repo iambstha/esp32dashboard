@@ -3,10 +3,11 @@ import React from 'react'
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faDashboard,
-  faChartBar,
-  faWheatAwnCircleExclamation,
-  faListSquares
+    faDashboard,
+    faChartBar,
+    faWheatAwnCircleExclamation,
+    faListSquares,
+    faLightbulb
 } from "@fortawesome/free-solid-svg-icons";
 
 
@@ -14,12 +15,25 @@ import {
 const Sidebar = () => {
     return (
         <ul className=' flex text-lg flex-col bg-white w-full h-full '>
-            <li className=' flex h-[50px] hover:bg-red-50 hover:transition-colors'><Link href='/' className='w-full h-[50px] p-4 flex items-center'><FontAwesomeIcon icon={faDashboard}/><span className=' pl-2 '> Dashboard </span></Link></li>
-            <li className=' flex h-[50px] hover:bg-red-50 hover:transition-colors'><Link href='/charts' className='w-full h-[50px] p-4 flex items-center'><FontAwesomeIcon icon={faChartBar}/><span className=' pl-2 '> Charts </span></Link></li>
-            <li className=' flex h-[50px] hover:bg-red-50 hover:transition-colors'><Link href='/controls' className='w-full h-[50px] p-4 flex items-center'><FontAwesomeIcon icon={faWheatAwnCircleExclamation}/><span className=' pl-2 '> Controls </span></Link></li>
-            <li className=' flex h-[50px] hover:bg-red-50 hover:transition-colors'><Link href='/alldatas' className='w-full h-[50px] p-4 flex items-center'><FontAwesomeIcon icon={faListSquares}/><span className=' pl-2 '> All Datas </span></Link></li>
+            <SidebarComp hr='/' icon={faDashboard} title='Dashboard' />
+            <SidebarComp hr='/charts' icon={faChartBar} title='Charts' />
+            <SidebarComp hr='/tuyacontrols' icon={faLightbulb} title='Tuya Control' />
+            <SidebarComp hr='/esp32controls' icon={faWheatAwnCircleExclamation} title='ESP32 Controls' />
+            <SidebarComp hr='/alldatas' icon={faListSquares} title='All Datas' />
         </ul>
     )
+}
+
+const SidebarComp = (props) => {
+    const { hr, icon, title } = props;
+    return <li className=' flex h-[50px] hover:bg-red-50 hover:transition-colors'>
+        <Link href={hr} className='w-full h-[50px] p-4 flex items-center'>
+            <span className=' text-orange-400 w-8 '><FontAwesomeIcon icon={icon} /></span>
+            <span className=' pl-4 '>
+                {title}
+            </span>
+        </Link>
+    </li>
 }
 
 export default Sidebar
