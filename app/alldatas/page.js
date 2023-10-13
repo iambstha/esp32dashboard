@@ -11,6 +11,8 @@ const page = () => {
                 list?.map(i => <li key={i}><Link href={`/alldatas/${i}`}>{i}</Link></li>)
             }
         </ul>
+
+        
     </div>
   )
 }
