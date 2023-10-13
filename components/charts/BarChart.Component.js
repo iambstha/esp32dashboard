@@ -20,10 +20,10 @@ ChartJS.register(
     Tooltip
 );
 
-const LineChartComponent = (props) => {
+const BarChartComponent = (props) => {
     const { deviceId } = props;
     const { data: dataSensor, isLoading: isLoadingStatus } = FetchSensorDataById(deviceId);
-    const usefulData = dataSensor?.slice(0, 50);
+    const usefulData = dataSensor?.slice(0, 100);
     const labels = usefulData.map((data) => data?.sensorTimestamp.slice(11,16));
 
     return (
@@ -61,4 +61,4 @@ const LineChartComponent = (props) => {
     )
 }
 
-export default LineChartComponent
+export default BarChartComponent

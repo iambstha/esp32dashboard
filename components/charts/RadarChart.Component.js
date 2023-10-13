@@ -34,7 +34,7 @@ const RadarChartComponent = (props) => {
     const labels = usefulData.map((data) => data?.sensorTimestamp.slice(11, 16));
 
     return (
-        <div className='border p-2 flex flex-col justify-center items-center overflow-hidden'>
+        <div className='border p-2 flex flex-col justify-center items-center'>
             <h2 className='text-center'>{deviceId}</h2>
             <span className='text-sm text-slate-400'>
                 {usefulData[0]?.sensorTimestamp.slice(0, 10)}

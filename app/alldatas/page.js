@@ -4,7 +4,7 @@ import React from 'react'
 const page = () => {
     const list = ['HC-SR04','MQ-135','DS18B20']
   return (
-    <div>
+    <div className=' h-full '>
         <ul>
             <h2>All Datas</h2>
             {
